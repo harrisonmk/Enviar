@@ -6,7 +6,7 @@ package enviar;
  */
 public class Banco{
 
-    // Declarando e Inicializando um array de Aluno com capacidade 100.
+    // Declarando e Inicializando um array de Conta com capacidade 100.
     private Conta[] contas = new Conta[100];
     private int totalContas = 0;
     
