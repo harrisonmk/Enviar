@@ -10,7 +10,9 @@ public class Enviar {
         Scanner scan = new Scanner(System.in);
         
         Banco lista = new Banco();
+        Pessoa p;
         Conta c = null;
+        
         
         int opcao;
         
@@ -25,10 +27,13 @@ public class Enviar {
                     
                     System.out.print("\nDigite seu nome: ");
                     String nome = scan.nextLine();
+                    p = new Pessoa();
+                    p.setNome(nome);
                     System.out.print("Digite uma senha: ");
                     String senha = scan.next();
                     c = new Conta();
-                    c.setNome(nome);
+                   
+                    c.setPessoa(p);
                     c.setSenha(senha);
                     
                     lista.adiciona(c);
@@ -39,6 +44,7 @@ public class Enviar {
                     
                     System.out.println("\nDigite o numero da conta:");
                     int nume = scan.nextInt();
+                    
                     
                     Conta k = lista.pega(nume - 1); //pega o tamanho da lista començando a partir do 1
                     
@@ -88,6 +94,8 @@ public class Enviar {
                     
                     din.transferir(money, valorMoney);
                     break;
+                
+                                        
                 case 0:
                     exit(0);
                     break;
