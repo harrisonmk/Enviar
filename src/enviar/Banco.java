@@ -64,24 +64,6 @@ public Conta pega(int posicao) {
     
     
 
-    @Override
-    public String toString() {
-        if (this.totalContas == 0) {
-            return "[]";
-        }
 
-        StringBuilder builder = new StringBuilder();
-        //builder.append("[");
-
-        for (int i = 0; i < this.totalContas - 1; i++) {
-            builder.append(this.contas[i]);
-            //builder.append(", ");
-        }
-
-        builder.append(this.contas[this.totalContas - 1]);
-        //builder.append("]");
-
-        return builder.toString();
-    }
 
 }
