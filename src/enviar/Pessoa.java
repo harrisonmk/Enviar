@@ -58,5 +58,15 @@ public class Pessoa {
         
         
     }
+
+    @Override
+    public String toString() {
+        return "Nome: " + nome; 
+                //"\nData de Nascimento: " + date + 
+                //"\nSexo: " + sexo + 
+                //"\nCpf: " + cpf;
+    }
+    
+    
     
 }
