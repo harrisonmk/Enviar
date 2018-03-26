@@ -6,16 +6,17 @@ import java.text.DecimalFormat;
  *
  * @author Harrison
  */
-public class Conta extends Pessoa {
+public class Conta {
 
     private double saldo;
     private String senha;
     private int numero;
     private int agencia;
     static int quantContas = 0;
+    Pessoa pessoa;
     
     public Conta() {
-        super.nome = nome;
+        //super.nome = nome;
         this.agencia = 15;
         quantContas++;
         this.numero=quantContas;
@@ -69,6 +70,16 @@ public class Conta extends Pessoa {
         Conta.quantContas = quantContas;
     }
 
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+    
+    
+
     public DecimalFormat getDeci() {
         return deci;
     }
@@ -77,20 +88,14 @@ public class Conta extends Pessoa {
         this.deci = deci;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
     
     
 
     public void dadosBancarios() {
 
         System.out.println("\nNumero: " + numero);
-        System.out.println("Nome: " + super.nome);
+        //System.out.println("Nome: " + super.nome);
+        System.out.println("Nome: "+pessoa);
         System.out.println("Agencia: " + agencia);
         System.out.println("Saldo: " + saldo);
 
@@ -98,13 +103,16 @@ public class Conta extends Pessoa {
 
     @Override
     public String toString() {
-        return "\nNumero: "+numero+
-                "\nNome: " + super.getNome() + 
-                "\nAgencia:" + agencia + 
-                "\nSaldo: " + saldo +"\n"; 
-                
+        return "\nNumero: " + numero + 
+                "\n" + pessoa + 
+                "\nAgencia: " + agencia + 
+                "\nSaldo: " + saldo; 
+                 
                 
     }
+
+    
+    
     
     
 
@@ -139,5 +147,7 @@ public class Conta extends Pessoa {
         }
 
     }
+    
+    
 
 }
